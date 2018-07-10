@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends '../layout.html' %}
+<html lang="en">
+{% block content %}
+    <div>
+        <input type="button" value="click" id="pay"/>
+
+        <div id="html"></div>
+        <script>
+            $().ready(function(){
+                $("#pay").click(function(){
+                    alert("44")
+                    $.ajax({
+                        url:"/users/user",
+                        success:function(data){
+                            //alert(data)
+                            $("#html").html(data)
+
+                        }
+                    })
+                })
+            })
+        </script>
+    </div>
+
+{% endblock %}
+</body>
+</html>
